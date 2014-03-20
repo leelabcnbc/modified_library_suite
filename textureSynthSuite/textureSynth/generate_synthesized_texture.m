@@ -34,7 +34,7 @@ if ~isfield(opts,'Nor');
 end
 
 if ~isfield(opts,'Na');
-    opts.Na = 9;
+    opts.Na = 7;
 end
 
 if ~isfield(opts,'nIter');
@@ -45,6 +45,7 @@ if ~isfield(opts,'cmask');
     opts.cmask = [1 1 1 1];
 end
 
+display(opts);
 
 params = textureAnalysis(input, opts.Nsc, opts.Nor, opts.Na);
 
