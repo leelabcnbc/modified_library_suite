@@ -1,4 +1,4 @@
-function imageArray = generate_synthesized_texture(input, numberOfImages, patchSize, ...
+function [imageArray,opts] = generate_synthesized_texture(input, numberOfImages, patchSize, ...
     opts)
 % GENERATE_SYNTHESIZED_TEXTURE a wrapper of the example scripts. 
 %  
@@ -25,19 +25,19 @@ if nargin < 4
     opts = struct();
 end
 
-if ~isfield(opts,'NSc');
+if ~isfield(opts,'Nsc') || isempty(opts.Nsc)
     opts.Nsc = 4;
 end
 
-if ~isfield(opts,'Nor');
+if ~isfield(opts,'Nor') || isempty(opts.Nor)
     opts.Nor = 4;
 end
 
-if ~isfield(opts,'Na');
+if ~isfield(opts,'Na') || isempty(opts.Na)
     opts.Na = 7;
 end
 
-if ~isfield(opts,'nIter');
+if ~isfield(opts,'nIter') || isempty(opts.nIter)
     opts.nIter = 25;
 end
 
@@ -63,6 +63,6 @@ end
 
 
 
-% Created with NEWFCN.m by Frank González-Morphy 
+% Created with NEWFCN.m by Frank Gonzï¿½lez-Morphy 
 % Contact...: frank.gonzalez-morphy@mathworks.de  
 % ===== EOF ====== [generate_synthesized_texture.m] ======  
