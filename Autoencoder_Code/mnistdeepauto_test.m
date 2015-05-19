@@ -37,6 +37,7 @@ else
     assert(isequal(batchtargets,oldMat.batchtargets));
     assert(isequal(testbatchdata,oldMat.testbatchdata));
     assert(isequal(testbatchtargets,oldMat.testbatchtargets));
+    fprintf('data passed!\n');
 end
 
 fprintf(1,'Pretraining Layer 1 with RBM: %d-%d \n',numdims,numhid);
@@ -52,6 +53,7 @@ else
     assert(isequal(vishid,oldMat.vishid));
     assert(isequal(hidrecbiases,oldMat.hidrecbiases));
     assert(isequal(visbiases,oldMat.visbiases));
+    fprintf('training passed!\n');
 end
 
 end
