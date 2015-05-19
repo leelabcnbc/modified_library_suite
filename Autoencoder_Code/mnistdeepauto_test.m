@@ -30,13 +30,13 @@ makebatches;
 [numcases numdims numbatches]=size(batchdata);
 
 if ~exist('mnistdeepauto_test_batchdata.mat','file')
-    save mnistdeepauto_test_batchdata batchdata testbatchdata batchdatatargets testbatchdatatargets;
+    save mnistdeepauto_test_batchdata batchdata testbatchdata batchtargets testbatchtargets;
 else
     oldMat = load('mnistdeepauto_test_batchdata.mat');
     assert(isequal(batchdata,oldMat.batchdata));
-    assert(isequal(batchdatatargets,oldMat.batchdatatargets));
+    assert(isequal(batchtargets,oldMat.batchtargets));
     assert(isequal(testbatchdata,oldMat.testbatchdata));
-    assert(isequal(testbatchdatatargets,oldMat.testbatchdatatargets));
+    assert(isequal(testbatchtargets,oldMat.testbatchtargets));
 end
 
 fprintf(1,'Pretraining Layer 1 with RBM: %d-%d \n',numdims,numhid);
