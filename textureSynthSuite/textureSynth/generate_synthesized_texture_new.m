@@ -1,4 +1,4 @@
-function [imageArray,opts] = generate_synthesized_texture(input, numberOfImages, patchSize, ...
+function [imageArray,opts] = generate_synthesized_texture_new(input, numberOfImages, patchSize, ...
     opts)
 % GENERATE_SYNTHESIZED_TEXTURE a wrapper of the example scripts. 
 %  
@@ -41,8 +41,12 @@ if ~isfield(opts,'nIter') || isempty(opts.nIter)
     opts.nIter = 25;
 end
 
-if ~isfield(opts,'cmask');
+if ~isfield(opts,'cmask') || isempty(opts.cmask);
     opts.cmask = [1 1 1 1];
+end
+% add this to remove some scales.
+if ~isfield(opts,'scaleMask') || isempty(opts.scaleMask);
+    opts.scaleMask = ones(1,opts.Nsc); % all scales are included.
 end
 
 display(opts);
@@ -50,7 +54,7 @@ display(opts);
 params = textureAnalysis(input, opts.Nsc, opts.Nor, opts.Na);
 
 for iImage = 1:numberOfImages
-    imageArray(:,:,iImage) = textureSynthesis(params, patchSize, opts.nIter, opts.cmask);
+    imageArray(:,:,iImage) = textureSynthesisNew(params, patchSize, opts.nIter, opts.cmask, [],opts.scaleMask);
     disp(iImage);
 end
 
