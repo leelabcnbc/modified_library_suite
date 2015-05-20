@@ -20,3 +20,4 @@ digit8.mat
 digit9.mat
 mnistdeepauto_test_batchdata.mat
 mnistdeepauto_test_vh.mat
+mnistdeepauto_test_vh_gpu.mat

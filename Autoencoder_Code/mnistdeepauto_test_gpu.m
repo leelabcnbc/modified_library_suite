@@ -17,7 +17,7 @@ rng('shuffle');
 % I just want to make sure that this program is properly seeded, ...
 % so such a shuffle command won't change it at all.
 
-maxepoch=10; %In the Science paper we use maxepoch=50, but it works just fine. 
+maxepoch=2; %In the Science paper we use maxepoch=50, but it works just fine. 
 numhid=1000; numpen=500; numpen2=250; numopen=30;
 
 fprintf(1,'Converting Raw files into Matlab format \n');
