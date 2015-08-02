@@ -1,5 +1,5 @@
-function mnistdeepauto_test()
-% MNISTDEEPAUTO_TEST ... 
+function mnistdeepauto_test_gpu()
+% MNISTDEEPAUTO_TEST_GPU ... 
 %  
 %   ... 
 %
@@ -66,6 +66,6 @@ end
 
 
 
-% Created with NEWFCN.m by Frank González-Morphy 
+% Created with NEWFCN.m by Frank Gonzï¿½lez-Morphy 
 % Contact...: frank.gonzalez-morphy@mathworks.de  
-% ===== EOF ====== [mnistdeepauto_test.m] ======  
+% ===== EOF ====== [mnistdeepauto_test_gpu.m] ======  
